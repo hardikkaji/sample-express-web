@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Hardik",
+		"orderName": "ORD-202",
+		"total": "500"
+	},
+	{
+		"name": "Amiras",
+		"orderName": "ORD-203",
+		"total": "1000"
+	},
+	{
+		"name": "Kaji",
+		"orderName": "ORD-204",
+		"total": "250"
+	}
+]
