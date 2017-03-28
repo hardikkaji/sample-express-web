@@ -13,6 +13,7 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+// serving static contents - libs and assets
 app.use(express.static('node_modules'));
 
 app.get('/api/customers', function(req, res) {
