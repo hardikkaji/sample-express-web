@@ -4,7 +4,7 @@ angular
 	.controller('SampleController', SampleController);
 
 function SampleController($scope) {
-	$scope.name = "Amiras";
+	$scope.name = "Hardik";
 
 	$scope.showMessage = true;
 	$scope.clickMe = clickMe;

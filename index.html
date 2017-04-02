@@ -73,6 +73,24 @@
 					</li>
 				</ul>
 			</div>
+			<div class="row col-md-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Address</th>
+							<th>Email Id</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in customers">
+							<td>{{item.name}}</td>
+							<td>{{item.address}}</td>
+							<td>{{item.emailId}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<div class="row">
 				<div class="col-sm-2">
 					<button type="button" class="btn btn-success" ng-click="clickMe()">Click Me!</button>
