@@ -15,6 +15,7 @@ app.get('/', function(req, res) {
 
 // serving static contents - libs and assets
 app.use(express.static('node_modules'));
+app.use(express.static('src'));
 
 app.get('/api/customers', function(req, res) {
 	res.send(customers);

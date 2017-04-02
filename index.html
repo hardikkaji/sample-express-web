@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="my-ng-app">
 	<head>
 		<title>Express Web App</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,54 +59,33 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 			</nav>
-		<div class="container-fluid">
-			<h1>Customers</h1>
-			<form>
-			<div class="form-group">
-				<label for="exampleInputEmail1">Email address</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+		<div class="container-fluid" ng-controller="SampleController">
+			<div class="row">
+				<div class="col-md-12">
+					<input class="form-control" type="text" ng-model="name" id="name">
+					<div class="help-block">Hello {{name}}!</div>
+				</div>
 			</div>
-			<div class="form-group">
-				<label for="exampleInputPassword1">Password</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			<div class="row">
+				<ul>
+					<li ng-repeat="item in customers">
+						<b>{{item.name}}</b>, {{item.address}}, {{item.emailId}}
+					</li>
+				</ul>
 			</div>
-			<div class="form-group">
-				<label for="exampleInputFile">File input</label>
-				<input type="file" id="exampleInputFile">
-				<p class="help-block">Example block-level help text here.</p>
+			<div class="row">
+				<div class="col-sm-2">
+					<button type="button" class="btn btn-success" ng-click="clickMe()">Click Me!</button>
+				</div>
+				<div class="col-sm-8">
+					<span ng-if="showMessage">Hello Welcome to our system</span>
+				</div>
 			</div>
-			<div class="checkbox">
-				<label>
-				<input type="checkbox"> Check me out
-				</label>
-			</div>
-			<button type="submit" class="btn btn-warning">Submit</button>
-			</form>
 		</div>
 	</body>
 	<script src="/jquery/dist/jquery.min.js"></script>
 	<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		// function loadDoc() {
-		// 	var xhttp = new XMLHttpRequest();
-
-		// 	xhttp.onreadystatechange = function() {
-		// 		if (this.readyState == 4 && this.status == 200) {
-		// 			document.getElementById("demo").innerHTML = this.responseText;
-		// 		}
-		// 	};
-
-		// 	xhttp.open("GET", "/api/customers", true);
-		// 	xhttp.send();
-		// }
-
-		// loadDoc();
-		$.ajax({
-			url: "/api/customers",
-			type: "GET"
-		}).then(function(response) {
-			document.getElementById("demo").innerHTML = JSON.stringify(response);
-		});
-	</script>
+	<script src="/angular/angular.min.js"></script>
+	<script src="my-ng-app.js"></script>
 </html>
 
